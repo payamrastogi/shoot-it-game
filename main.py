@@ -54,7 +54,7 @@ pause_img = pygame.image.load(f'assets/menus/pause.png')
 for i in range(1, 4):
     bgs.append(pygame.image.load(f'assets/bgs/{i}.png'))
     banners.append(pygame.image.load(f'assets/banners/{i}.png'))
-    guns.append(pygame.image.load(f'assets/guns/{i}.png'))
+    guns.append(pygame.transform.scale(pygame.image.load(f'assets/guns/{i}.png'), (100, 100)))
     if i<3:
         for j in range(1, 4):
             target_images[i-1].append(pygame.transform.scale(
