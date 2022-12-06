@@ -268,7 +268,7 @@ def draw_game_over():
         global run
         run = False
 def draw_pause():
-    global level, pause, menu, points, total_shots, time_passed, time_remaining, clicked
+    global level, pause, menu, points, total_shots, time_passed, time_remaining, clicked, new_coords
     screen.blit(pause_img, (0, 0))
     mouse_pos = pygame.mouse.get_pos()
     clicks = pygame.mouse.get_pressed()
@@ -397,7 +397,7 @@ while run:
     if level > 0:
         if target_boxes == [[], [], []] and level < 3:
             level += 1
-        if (level == 3 and target_boxes == [[], [], []]) or (mode==1 and ammo==0) or (mode==2 and time_remaining ==0):
+        if (level == 3 and target_boxes == [[], [], [], []]) or (mode==1 and ammo==0) or (mode==2 and time_remaining ==0):
             new_coords = True
             pygame.mixer.music.play()
             if mode == 0:
